@@ -1,5 +1,5 @@
-// Shared API helper – points at local FastAPI backend
-const BASE = 'http://localhost:8000'
+// Shared API helper – points at FastAPI backend
+const BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 export async function createSession(childName, childAge) {
   const res = await fetch(`${BASE}/api/session`, {
